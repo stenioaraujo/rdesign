@@ -48,14 +48,13 @@
 
 			function decCont(){
 				var element = document.getElementById("cont");
+
+				horario -= 2;				
+				element.innerHTML = horario;
 				
 				if (horario <= 0){
-					return;
+					element.innerHTML = 0;
 				}
-
-				horario -= 2;
-				
-				element.innerHTML = horario;
 			}
 		</script>
 		</div>
