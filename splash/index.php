@@ -49,8 +49,7 @@
 			function decCont(){
 				var element = document.getElementById("cont");
 				
-				if (element.innerHTML <= 0){
-					element.innerHTML = 0;
+				if (horario <= 0){
 					return;
 				}
 
