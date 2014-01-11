@@ -12,10 +12,10 @@
 		<style>
 		body{
 			background: #000;
+			height: 100%;
 		}
 		#logo{
 			text-align: center;
-			margin-top: 220px;
 		}
 		#logo img{
 			width: 100px;
@@ -32,31 +32,38 @@
 			font-size: 100px;
 			margin-top: 100px;
 		}
+		.Absolute-Center{
+			margin: auto;
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+			height: 550px;
+			width: 800px;
+		}
 		</style>
 		
 	</head>
 	
 	<body>
 			
-		<div id="logo">
-		<img src="rdesign.png" alt=""></img>
-		<h1>Something big is coming...</h1>
-		<div id="cont" class="odometer"><?php echo 1420565763 - time();?></div>
-		<script type="text/javascript">
-			setInterval(function(){decCont()}, 2000);
-			var horario = <?php echo 1420565763 - time();?>;
+		<div id="logo" class="Absolute-Center">
+			<img src="rdesign.png" alt=""></img>
+			<h1>Something big is coming...</h1>
+			<div id="cont" class="odometer"><?php echo 1420565763 - time();?></div>
+			<script type="text/javascript">
+				setInterval(function(){decCont()}, 2000);
+				var horario = <?php echo 1420565763 - time();?>;
 
-			function decCont(){
-				var element = document.getElementById("cont");
+				function decCont(){
+					var element = document.getElementById("cont");
 
-				horario -= 2;				
-				element.innerHTML = horario;
-				
-				if (horario <= 0){
-					element.innerHTML = 0;
+					horario -= 2;				
+					element.innerHTML = horario;
+					
+					if (horario <= 0){
+						element.innerHTML = 0;
+					}
 				}
-			}
-		</script>
+			</script>
 		</div>
 	</body>
 </html>
