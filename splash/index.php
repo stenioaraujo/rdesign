@@ -76,10 +76,11 @@
 						var element = document.getElementById("cont");
 
 						horario -= 2;				
-						element.innerHTML = horario;
 						
 						if (horario <= 0){
 							element.innerHTML = 0;
+						}else{
+							element.innerHTML = horario;
 						}
 					}
 				</script>
