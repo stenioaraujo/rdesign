@@ -10,9 +10,16 @@
 		<link rel="stylesheet" href="odometer-theme.css" />
 		<script src="odometer.js"></script>
 		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html, body {
+			height:100%;
+			width:100%;
+		}
 		body{
 			background: #000;
-			height: 100%;
 		}
 		#logo{
 			text-align: center;
@@ -22,15 +29,17 @@
 		}
 		#logo h1{
 			color: #fafafa;
-			font-family: Roboto Light, sans-serif;
+			font-family: Source Code Pro, sans-serif;
 			font-size: 33px;
-			margin-top: 50px;
+			margin-top: 80px;
+			text-transform: uppercase;
+			opacity: .5;
 		}
 		.odometer{
 			color: #fff;
 			font-family: sans-serif;
 			font-size: 100px;
-			margin-top: 100px;
+			margin-top: 75px;
 		}
 		.Absolute-Center{
 			margin: auto;
@@ -39,31 +48,45 @@
 			height: 550px;
 			width: 800px;
 		}
+		#pg1{
+			width: 100%;
+			height: 100%;
+		}
+		#pg2{
+			background: #333;
+			width: 100%;
+			height:100%;
+			overflow-y: auto;
+		}
 		</style>
 		
 	</head>
 	
 	<body>
-			
-		<div id="logo" class="Absolute-Center">
-			<img src="rdesign.png" alt=""></img>
-			<h1>Something big is coming...</h1>
-			<div id="cont" class="odometer"><?php echo 1420565763 - time();?></div>
-			<script type="text/javascript">
-				setInterval(function(){decCont()}, 2000);
-				var horario = <?php echo 1420565763 - time();?>;
+		<div id="pg1">	
+			<div id="logo" class="Absolute-Center">
+				<img src="rdesign.png" alt=""></img>
+				<h1>Something big is coming...</h1>
+				<div id="cont" class="odometer"><?php echo 1420565763 - time();?></div>
+				<script type="text/javascript">
+					setInterval(function(){decCont()}, 2000);
+					var horario = <?php echo 1420565763 - time();?>;
 
-				function decCont(){
-					var element = document.getElementById("cont");
+					function decCont(){
+						var element = document.getElementById("cont");
 
-					horario -= 2;				
-					element.innerHTML = horario;
-					
-					if (horario <= 0){
-						element.innerHTML = 0;
+						horario -= 2;				
+						element.innerHTML = horario;
+						
+						if (horario <= 0){
+							element.innerHTML = 0;
+						}
 					}
-				}
-			</script>
+				</script>
+			</div>
+		</div>
+		<div id="pg2">
+		
 		</div>
 	</body>
 </html>
